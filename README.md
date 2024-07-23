@@ -15,13 +15,13 @@
 ## Installation
 
 ```
-npm install -g @elgato/cli
+npm install -g @pursuewind/streamdock_cli
 ```
 
 ## Usage
 
 ```
-Usage: streamdeck [options] [command]
+Usage: streamdock [options] [command]
 
 Options:
   -v                            display CLI version
@@ -39,7 +39,7 @@ Commands:
   help [command]                display help for command
 
 Alias:
-  streamdeck
+  streamdock
   sd
 ```
 
@@ -61,15 +61,14 @@ Creation wizard.
 ### Synopsis
 
 ```
-streamdeck create
+streamdock create
 ```
 
 ### Description
 
 The creation wizard will guide you through creating Stream Deck plugins with our official Node.js SDK, and provides all scaffolding required to get started quickly. As part of the wizard, developer mode is enabled, and the plugin built and linked to Stream Deck making it ready for use.
 
-> To learn more about creating Stream Deck plugins with Node.js, see our [Stream Deck SDK](https://github.com/elgatosf/streamdeck).
-
+ 
 #### See Also
 
 -   [dev](#%EF%B8%8F-dev)
@@ -82,7 +81,7 @@ Links the plugin to Stream Deck.
 ### Synopsis
 
 ```
-streamdeck link [path]
+streamdock link [path]
 ```
 
 ### Description
@@ -98,7 +97,7 @@ Starts the plugin in Stream Deck; if the plugin is already running, it is stoppe
 ### Synopsis
 
 ```
-streamdeck restart <uuid>
+streamdock restart <uuid>
 
 alias: r
 ```
@@ -118,7 +117,7 @@ Stops the plugin in Stream Deck.
 ### Synopsis
 
 ```
-streamdeck stop <uuid>
+streamdock stop <uuid>
 
 alias: s
 ```
@@ -140,7 +139,7 @@ Validates the Stream Deck plugin.
 ### Synopsis
 
 ```
-streamdeck validate [path]
+streamdock validate [path]
 
 Arguments:
   path                  Path of the plugin to validate
@@ -179,7 +178,7 @@ Creates a .streamDeckPlugin file from the plugin.
 ### Synopsis
 
 ```
-streamdeck pack [options] [path]
+streamdock pack [options] [path]
 
 Arguments:
   path                  Path of the plugin to pack
@@ -206,19 +205,19 @@ By default, all files within the specified `path` are included except `.git`, `/
 Create a `.streamDeckPlugin` of the plugin located in `com.elgato.test.sdPlugin/`, writing the packaged file to a `dist/` folder, specifying the new version.
 
 ```
-streamdeck pack com.elgato.test.sdPlugin/ --output dist/
+streamdock pack com.elgato.test.sdPlugin/ --output dist/
 ```
 
 Create a `.streamDeckPlugin` of the current working directory, specifying a new version of the plugin.
 
 ```
-streamdeck pack --version 0.8.2
+streamdock pack --version 0.8.2
 ```
 
 Generate a report for the plugin in the current working directory, without creating a `.streamDeckPlugin` file.
 
 ```
-streamdeck pack --dry-run
+streamdock pack --dry-run
 ```
 
 ### Configuration
@@ -272,7 +271,7 @@ Enables developer mode.
 ### Synopsis
 
 ```
-streamdeck dev [-d|--disable]
+streamdock dev [-d|--disable]
 ```
 
 ### Description
@@ -286,22 +285,22 @@ Manage the local configuration.
 ### Synopsis
 
 ```
-streamdeck config set <key>=<value> [<key>=<value>...]
-streamdeck config unset <key> [<key>...]
-streamdeck config list
-streamdeck config reset
+streamdock config set <key>=<value> [<key>=<value>...]
+streamdock config unset <key> [<key>...]
+streamdock config list
+streamdock config reset
 ```
 
 ### Description
 
-The CLI gets its configuration settings from the user's local environment. These configuration settings define the output of commands and how they're executed, and enable customization of interaction. The `streamdeck config` command can be used to update and manage these settings.
+The CLI gets its configuration settings from the user's local environment. These configuration settings define the output of commands and how they're executed, and enable customization of interaction. The `streamdock config` command can be used to update and manage these settings.
 
 #### Sub-commands
 
 #### set
 
 ```
-streamdeck config set <key>=<value> [<key>=<value>...]
+streamdock config set <key>=<value> [<key>=<value>...]
 ```
 
 Sets each of the configuration keys to the value provided.
@@ -309,7 +308,7 @@ Sets each of the configuration keys to the value provided.
 #### unset
 
 ```
-streamdeck config <key> [<key>...]
+streamdock config <key> [<key>...]
 ```
 
 Sets each of the configuration keys to their default values.
@@ -317,7 +316,7 @@ Sets each of the configuration keys to their default values.
 #### reset
 
 ```
-streamdeck config reset
+streamdock config reset
 ```
 
 Resets all configuration keys to their default values.
@@ -325,7 +324,7 @@ Resets all configuration keys to their default values.
 #### list
 
 ```
-streamdeck config list
+streamdock config list
 ```
 
 Lists the defined configuration, eg. values defined using [config set](#set).
