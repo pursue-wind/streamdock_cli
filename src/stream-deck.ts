@@ -29,11 +29,11 @@ export function getPlugins(): PluginInfo[] {
  */
 export function getPluginsPath(): string {
 	if (os.platform() === "darwin") {
-		return join(os.homedir(), "Library/Application Support/com.elgato.StreamDeck/Plugins");
+		return join(os.homedir(), "/Library/Application Support/HotSpot/StreamDock/plugins");
 	}
 
 	const appData = process.env.APPDATA ?? join(os.homedir(), "AppData/Roaming");
-	return resolve(join(appData, "Elgato/StreamDeck/Plugins"));
+	return resolve(join(appData, "Elgato/StreamDeck/Plugins")); //todo
 }
 
 /**
@@ -60,9 +60,9 @@ export function isPluginInstalled(uuid: string): boolean {
  */
 export function getStreamDeckPath(): string {
 	if (os.platform() === "darwin") {
-		return "/Applications/Elgato Stream Deck.app/Contents/MacOS/Stream Deck";
+		return "/Applications/Stream Dock AJAZZ.app/Contents/MacOS/Stream Dock AJAZZ";
 	} else {
-		return "C:\\Program Files\\Elgato\\StreamDeck\\StreamDeck.exe";
+		return "C:\\Program Files\\Elgato\\StreamDeck\\StreamDeck.exe"; // todo
 	}
 }
 
@@ -74,7 +74,7 @@ export async function isStreamDeckRunning(): Promise<boolean> {
 	const appPath = getStreamDeckPath();
 
 	if (os.platform() === "darwin") {
-		const processes = await find("name", "Elgato Stream Deck");
+		const processes = await find("name", "Stream Dock AJAZZ");
 		return processes.some((p) => p.cmd.startsWith(appPath));
 	} else {
 		const processes = await find("name", "StreamDeck.exe");

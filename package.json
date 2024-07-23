@@ -1,10 +1,10 @@
 {
-    "name": "@elgato/cli",
-    "version": "0.3.1",
+    "name": "@pursuewind/streamdock_cli",
+    "version": "0.0.3",
     "description": "CLI tool for building with Stream Deck.",
     "bin": {
-        "streamdeck": "bin/streamdeck.mjs",
-        "sd": "bin/streamdeck.mjs"
+        "streamdock": "bin/streamdeck.mjs",
+        "stream_deck": "bin/streamdeck.mjs"
     },
     "type": "module",
     "main": "./dist/index.js",
@@ -43,8 +43,8 @@
         "maker"
     ],
     "author": {
-        "name": "Elgato",
-        "url": "https://www.elgato.com"
+        "name": "pursuewind",
+        "url": "https://doc.pursue.pub"
     },
     "license": "MIT",
     "bugs": {
